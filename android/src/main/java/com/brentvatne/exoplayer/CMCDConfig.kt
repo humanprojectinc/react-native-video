@@ -8,6 +8,7 @@ import com.google.common.collect.ImmutableListMultimap
 class CMCDConfig(private val props: CMCDProps) {
     fun toCmcdConfigurationFactory(): CmcdConfiguration.Factory = CmcdConfiguration.Factory(::createCmcdConfiguration)
 
+    @SuppressLint("WrongConstant")
     private fun createCmcdConfiguration(mediaItem: MediaItem): CmcdConfiguration =
         CmcdConfiguration(
             java.util.UUID.randomUUID().toString(),
