@@ -1,5 +1,6 @@
 package com.brentvatne.exoplayer
 
+import android.annotation.SuppressLint
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.upstream.CmcdConfiguration
 import com.brentvatne.common.api.CMCDProps
