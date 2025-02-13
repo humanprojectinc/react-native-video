@@ -5,8 +5,20 @@ def safeExtGet(prop, fallback) {
 }
 
 android {
+    namespace 'com.brentvatne.react'
+    sourceSets {
+        main {
+            manifest.srcFile "src/main/AndroidManifestNew.xml"
+        }
+    }
+
     compileSdkVersion safeExtGet('compileSdkVersion', 28)
     buildToolsVersion safeExtGet('buildToolsVersion', '28.0.3')
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
 
     defaultConfig {
         minSdkVersion safeExtGet('minSdkVersion', 16)
@@ -21,6 +33,6 @@ android {
 
 dependencies {
     //noinspection GradleDynamicVersion
-    implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
+    implementation "com.facebook.react:react-android:+"
     implementation 'com.github.adityaxjha:Android-ScalableVideoView:10e7b4da8b'
 }
